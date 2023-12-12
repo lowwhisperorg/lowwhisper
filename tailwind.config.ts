@@ -11,9 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'mtn' : "url('/background.svg')",
       },
     },
   },
@@ -21,12 +19,14 @@ const config: Config = {
   plugins: [
     nextui({
       themes: {
-        "default-theme": {
+        "dark": {
           extend: "dark", // <- inherit default values from dark theme
           colors: {
-            background: "2c2c2a",
+            background: "#2c2c2a",
             foreground: "#dedfda",
+            primary: "#947722",
           },
+          
           layout: {
             disabledOpacity: "0.3",
             radius: {
