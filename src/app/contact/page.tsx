@@ -1,6 +1,6 @@
 "use client"
 import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } from "@nextui-org/react";
-import Reactfrom "react";
+import React from "react";
 
 export default function Contact() {
 
