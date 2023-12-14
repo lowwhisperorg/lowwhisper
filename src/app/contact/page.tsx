@@ -14,19 +14,12 @@ export default function Contact() {
                     <h1><b>Contact</b></h1>
                 </CardHeader>
                 <CardBody className="">
-                    <p>Use the form below to contact me for services or for prayer requests! If you would like to donate,
-                        please use the <Link href="/donate">donate</Link> page.
+                    <p>Use the form below to contact me for services or prayer requests! 
+                        {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
                     <form className="p-6">
-                        <Input isRequired type="text" label="Name" />
-                        <Input isRequired type="email" label="Email" />
-                        <Input 
-                        label="Phone Number (Optional)"
-                        type="telephone"
-                        name="telephone"
-                        />
-                        <RadioGroup
-                            label="Select request"
+                    <RadioGroup
+                            label="What are you requesting?"
                             orientation="horizontal"
                             color="primary"
                             className="py-2"
@@ -37,6 +30,14 @@ export default function Contact() {
                             <Radio value="other" >Other</Radio>
 
                         </RadioGroup>
+                        <Input isRequired type="text" label="Name" />
+                        <Input isRequired type="email" label="Email" />
+                        <Input 
+                        label="Phone Number (Optional)"
+                        type="telephone"
+                        name="telephone"
+                        />
+                        
                             <Input isRequired type="textarea" label="Message" />
 
                             <Button

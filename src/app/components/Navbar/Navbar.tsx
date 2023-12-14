@@ -4,7 +4,7 @@ import { Navbar as NextNavbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMen
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-  "about", "contact", "donate"
+  "about", "contact"
 ]
 
 export default function Navbar() {
