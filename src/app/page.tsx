@@ -5,7 +5,6 @@ import * as React from "react";
 
 // 1. import `NextUIProvider` component
 import { Card, CardBody, CardHeader, Link, NextUIProvider } from "@nextui-org/react";
-import { Router } from "next/router";
 
 export default function App() {
     const background = "public/background.svg"
