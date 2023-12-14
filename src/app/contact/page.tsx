@@ -3,9 +3,6 @@ import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } fr
 import React, { useState } from "react";
 
 export default function Contact() {
-    const services = ["Prayer", "Service"]
-
-    const [selected, setSelectedValue] = useState('');
 
     return (
         <div className="flex flex-col justify-center items-center p-6">

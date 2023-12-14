@@ -27,7 +27,7 @@ export default function About() {
           <p className="font-serif">
           I am a firm believer in the Gospel. 
           I also am happily engaged to my fiancée, Riley. 
-          I love serving on the worship team at Hendersonville Church. I'm a recent Computer Science graduate from UNCA. In my free time, 
+          I love serving on the worship team at Hendersonville Church. I&apos;m a recent Computer Science graduate from UNCA. In my free time, 
           I love spending time with Riley, going on hikes, and coding.
           </p>
         </CardBody>

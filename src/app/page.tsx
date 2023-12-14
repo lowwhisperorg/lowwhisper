@@ -1,6 +1,5 @@
 "use client"
 import * as React from "react";
-import Navbar from "./components/Navbar/Navbar"
 
 
 
@@ -22,7 +21,7 @@ export default function App() {
                         <Card className="max-w-xs text-foreground bg-background font-serif">
                             <CardHeader>
                                 <h2>
-                                    {"Hi, I'm Noah!"}
+                                    Hi, I&apos;m Noah!
                                 </h2>
                             </CardHeader>
                             <CardBody>
@@ -39,7 +38,7 @@ export default function App() {
                             <CardBody className="font-serif">
                                 <p>1 Kings 19:12
 
-                                    "And after the earthquake a fire, but the LORD was not in the fire. And after the fire the sound of a low whisper." (ESV)</p>
+                                &quot;And after the earthquake a fire, but the LORD was not in the fire. And after the fire the sound of a low whisper.&quot; (ESV)</p>
                             </CardBody>
                         </Card>
                     </div>
