@@ -1,11 +1,15 @@
-import { Card, CardBody, CardHeader, Input, Button, Autocomplete, AutocompleteItem, Link } from "@nextui-org/react";
-import React from "react";
+"use client"
+import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } from "@nextui-org/react";
+import React, { useState } from "react";
 
 export default function Contact() {
     const services = ["Prayer", "Service"]
+
+    const [selected, setSelectedValue] = useState('');
+
     return (
-        <div className="flex h-[calc(100vh-64px)] justify-center items-center flex-row min-h-full min-w-full p-6">
-            <Card className="max-w-screen-sm text-foreground bg-background p-6">
+        <div className="flex flex-col justify-center items-center p-6">
+            <Card className="max-w-screen-xs max-h-screen-xs text-foreground bg-background p-6">
                 <CardHeader>
                     <h1><b>Contact</b></h1>
                 </CardHeader>
@@ -14,25 +18,38 @@ export default function Contact() {
                         please use the <Link href="/donate">donate</Link> page.
                     </p>
                     <form className="p-6">
-                        <Input type="text" label="Name"/>
-                        <Input type="email" label="Email" />
-                        <Autocomplete label="Request">
-                        </Autocomplete>
-
-                        <Input type="textarea" label="Message" />
-                        <Button
-                            variant="shadow"
+                        <Input isRequired type="text" label="Name" />
+                        <Input isRequired type="email" label="Email" />
+                        <Input 
+                        label="Phone Number (Optional)"
+                        type="telephone"
+                        name="telephone"
+                        />
+                        <RadioGroup
+                            label="Select request"
+                            orientation="horizontal"
                             color="primary"
-                            className="mt-4 text-foreground"
+                            className="py-2"
+                            isRequired
                         >
-                            Send Message
-                        </Button>
+                            <Radio value="prayer" >Prayer</Radio>
+                            <Radio value="service" >Service</Radio>
+                            <Radio value="other" >Other</Radio>
+
+                        </RadioGroup>
+                            <Input isRequired type="textarea" label="Message" />
+
+                            <Button
+                                variant="shadow"
+                                color="primary"
+                                className="mt-4 text-foreground"
+                                
+                            >
+                                Send Message
+                            </Button>
                     </form>
                 </CardBody>
             </Card>
-            <div className="grow">
-
-            </div>
         </div>
     );
 }
