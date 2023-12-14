@@ -1,8 +1,16 @@
 "use client"
 import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } from "@nextui-org/react";
-import React from "react";
+import React, {useState} from "react";
 
 export default function Contact() {
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        // handle form submission logic here
+        setIsSubmitted(true);
+    };
 
     return (
         <div className="flex flex-col justify-center items-center p-6">
@@ -11,11 +19,11 @@ export default function Contact() {
                     <h1><b>Contact</b></h1>
                 </CardHeader>
                 <CardBody className="">
-                    <p>Use the form below to contact me for services or prayer requests! 
+                    <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6">
-                    <RadioGroup
+                    <form className="p-6" data-netlify="true" onSubmit={handleSubmit}>
+                        <RadioGroup
                             label="What are you requesting?"
                             orientation="horizontal"
                             color="primary"
@@ -29,23 +37,24 @@ export default function Contact() {
                         </RadioGroup>
                         <Input isRequired type="text" label="Name" />
                         <Input isRequired type="email" label="Email" />
-                        <Input 
-                        label="Phone Number (Optional)"
-                        type="telephone"
-                        name="telephone"
+                        <Input
+                            label="Phone Number (Optional)"
+                            type="telephone"
+                            name="telephone"
                         />
-                        
-                            <Input isRequired type="textarea" label="Message" />
 
-                            <Button
-                                variant="shadow"
-                                color="primary"
-                                className="mt-4 text-foreground"
-                                
-                            >
-                                Send Message
-                            </Button>
+                        <Input isRequired type="textarea" label="Message" />
+
+                        <Button
+                            variant="shadow"
+                            color="primary"
+                            type="submit"
+                            className="mt-4 text-foreground"
+                        >
+                            Send Message
+                        </Button>
                     </form>
+                    {isSubmitted && <p>Thank you for your message! We will get back to you soon.</p>}
                 </CardBody>
             </Card>
         </div>
