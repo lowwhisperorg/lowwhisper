@@ -9,7 +9,7 @@ import { Card, CardBody, CardHeader, Link, NextUIProvider } from "@nextui-org/re
 import { Router } from "next/router";
 
 export default function App() {
-    const background = 'public/background.svg'
+    const background = "public/background.svg"
     // 2. Wrap NextUIProvider at the root of your app
     return (
         <NextUIProvider>
@@ -22,10 +22,10 @@ export default function App() {
                         <Card className="max-w-xs text-foreground bg-background font-serif">
                             <CardHeader>
                                 <h2>
-                                    Hi, I'm Noah!
+                                    {"Hi, I'm Noah!"}
                                 </h2>
                             </CardHeader>
-                            <CardBody className="">
+                            <CardBody>
                                 <p>Thank you for visiting my site! By the grace of God, 
                                     I make software for those called. See my <Link href="/about">about</Link> page for more information.</p>
                             </CardBody>
