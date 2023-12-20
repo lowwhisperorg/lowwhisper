@@ -6,6 +6,12 @@ export default function Contact() {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        // handle form submission logic here
+        setIsSubmitted(true);
+    };
+
     return (
         <div className="flex flex-col justify-center items-center p-6">
             <Card className="max-w-screen-xs max-h-screen-xs text-foreground bg-background p-6">
@@ -16,7 +22,8 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" name="contact" method="POST" netlify-data="true">
+                    <form className="p-6" method="POST" name="contact" netlify-data="true" onSubmit={handleSubmit}>
+                        <input type="hidden" name="form-name" value="contact" />
                         <RadioGroup
                             label="What are you requesting?"
                             orientation="horizontal"
@@ -49,7 +56,7 @@ export default function Contact() {
                             Send Message
                         </Button>
                     </form>
-                    {/* {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>} */}
+                    {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>}
                 </CardBody>
             </Card>
         </div>
