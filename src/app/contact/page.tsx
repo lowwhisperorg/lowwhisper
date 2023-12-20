@@ -48,8 +48,8 @@ export default function Contact() {
                             isRequired
                             name="requestType"
                         >
-                            <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
                             <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
+                            <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
                             <Radio type="radio" name="requestType" value="other" id="other" >Other</Radio>
                         </RadioGroup>
                         <Input isRequired type="text" name="name" label="Name" id="name"/>
