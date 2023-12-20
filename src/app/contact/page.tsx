@@ -22,7 +22,7 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" data-netlify="true" onSubmit={handleSubmit}>
+                    <form className="p-6" method="POST" netlify-data="true" onSubmit={handleSubmit}>
                         <RadioGroup
                             label="What are you requesting?"
                             orientation="horizontal"
@@ -44,6 +44,7 @@ export default function Contact() {
                         />
 
                         <Input isRequired type="textarea" label="Message" />
+                        
 
                         <Button
                             variant="shadow"
@@ -54,7 +55,7 @@ export default function Contact() {
                             Send Message
                         </Button>
                     </form>
-                    {isSubmitted && <p>Thank you for your message! We will get back to you soon.</p>}
+                    {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>}
                 </CardBody>
             </Card>
         </div>
