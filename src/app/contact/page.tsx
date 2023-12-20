@@ -16,7 +16,7 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" method="POST" netlify-data="true">
+                    <form className="p-6" name="contact" method="POST" netlify-data="true">
                         <RadioGroup
                             label="What are you requesting?"
                             orientation="horizontal"
