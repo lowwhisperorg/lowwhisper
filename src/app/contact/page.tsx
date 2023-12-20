@@ -22,7 +22,7 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" method="POST" name="contact" netlify-data="true">
+                    <form className="p-6" method="POST" name="contact" netlify-data="true" onSubmit={handleSubmit}>
                         <input type="hidden" name="form-name" value="contact" />
                         <RadioGroup
                             label="What are you requesting?"
@@ -52,7 +52,6 @@ export default function Contact() {
                             color="primary"
                             type="submit"
                             className="mt-4 text-foreground"
-                            onSubmit={handleSubmit}
                         >
                             Send Message
                         </Button>
