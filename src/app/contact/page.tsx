@@ -1,29 +1,16 @@
+"use client"
 import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } from "@nextui-org/react";
 import React, {useState} from "react";
 
 export default function Contact() {
 
-    // const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // const handleSubmit = (event: React.FormEvent) => {
-    //     event.preventDefault();
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
 
-    //     const myForm = event.target as HTMLFormElement;
-    //     const formData = new FormData(myForm);
-    //     const formParams = new URLSearchParams()
-
-    //     formData.forEach((value, key) => {
-    //         formParams.append(key, value as string);
-    //     });
-      
-    //     fetch("/", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //       body: formParams.toString(),
-    //     })
-    //       .then(() => setIsSubmitted(true))
-    //       .catch((error) => alert(error));
-    // };
+        setIsSubmitted(true)
+    };
 
     return (
         <div className="flex flex-col justify-center items-center p-6">
@@ -35,7 +22,7 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" method="POST" name="contact" netlify-data="true" action="/success">
+                    <form className="p-6" method="POST" name="contact" netlify-data="true">
                         <input type="hidden" name="form-name" value="contact" />
                         <RadioGroup
                             label="What are you requesting?"
@@ -65,11 +52,12 @@ export default function Contact() {
                             color="primary"
                             type="submit"
                             className="mt-4 text-foreground"
+                            onSubmit={handleSubmit}
                         >
                             Send Message
                         </Button>
                     </form>
-                    {/* {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>} */}
+                    {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>}
                 </CardBody>
             </Card>
         </div>
