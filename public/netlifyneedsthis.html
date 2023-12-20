@@ -1,10 +1,31 @@
-<form name="contact" netlify hidden>
-    <input type="radio" name="Prayer" value="Prayer" />
-    <input type="radio" name="Service" value="Service" />
-    <input type="radio" name="Other" value="Other" />
-    <input type="text" name="name" />
-    <input type="email" name="email" />
-    <input type="telephone" name="telephone" />
-    <textarea name="message"></textarea>
-    <button type="submit">Send</button>
-  </form>
+<form class="p-6" method="POST" name="contact" data-netlify="true" onSubmit="handleSubmit(event)">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <label>What are you requesting?</label>
+  <div>
+      <input type="radio" name="requestType" value="prayer" id="prayer" required>
+      <label for="prayer">Prayer</label>
+  </div>
+  <div>
+      <input type="radio" name="requestType" value="service" id="service" required>
+      <label for="service">Service</label>
+  </div>
+  <div>
+      <input type="radio" name="requestType" value="other" id="other" required>
+      <label for="other">Other</label>
+  </div>
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required>
+
+  <label for="telephone">Phone Number (Optional):</label>
+  <input type="tel" name="telephone">
+
+  <label for="message">Message:</label>
+  <textarea name="message" id="message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
