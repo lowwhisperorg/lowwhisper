@@ -5,6 +5,8 @@ import React, {useState} from "react";
 export default function Contact() {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [Error, setError] = useState("");
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -16,7 +18,9 @@ export default function Contact() {
           body: formData,
         })
         .then(response => setIsSubmitted(true))
-        .catch(error => console.error('Form submission error:', error));
+        .catch(error => {
+            setIsError(true); 
+            setError(error);});
 
         setIsSubmitted(true)
     };
@@ -31,7 +35,8 @@ export default function Contact() {
                     <p>Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
-                    <form className="p-6" method="POST" name="contact" netlify-data="true" onSubmit={handleSubmit}>
+                    { !isError && !isSubmitted ?  
+                    <form className="p-6" method="POST" name="contact" data-netlify="true" onSubmit={handleSubmit}>
                         <input type="hidden" name="form-name" value="contact" />
                         <RadioGroup
                             label="What are you requesting?"
@@ -43,7 +48,6 @@ export default function Contact() {
                             <Radio type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
                             <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
                             <Radio type="radio" name="requestType" value="other" id="other" >Other</Radio>
-
                         </RadioGroup>
                         <Input isRequired type="text" name="name" label="Name" id="name"/>
                         <Input isRequired type="email" name="email" label="Email" id="email" />
@@ -64,7 +68,9 @@ export default function Contact() {
                         >
                             Send Message
                         </Button>
-                    </form>
+                    </form> 
+                    : <></>}
+                    {isError && <center><p className="p-6">There was an error submitting your form. Please try again later.</p></center>}
                     {isSubmitted && <center><p className="p-6">Thank you! I will get back to you soon.</p></center>}
                 </CardBody>
             </Card>
