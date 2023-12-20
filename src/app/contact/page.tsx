@@ -7,6 +7,7 @@ export default function Contact() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isError, setIsError] = useState(false);
     const [Error, setError] = useState("");
+    const [requestType, setRequestType] = useState("service");
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -47,7 +48,8 @@ export default function Contact() {
                             className="py-2"
                             isRequired
                             name="requestType"
-                            value="Request Type"
+                            value={requestType}
+                            onValueChange={(value) => setRequestType(value)}
                         >
                             <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
                             <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
