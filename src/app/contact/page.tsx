@@ -47,6 +47,7 @@ export default function Contact() {
                             className="py-2"
                             isRequired
                             name="requestType"
+                            value="Request Type"
                         >
                             <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
                             <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
