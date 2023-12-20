@@ -8,8 +8,22 @@ export default function Contact() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        // handle form submission logic here
-        setIsSubmitted(true);
+
+        const myForm = event.target as HTMLFormElement;
+        const formData = new FormData(myForm);
+        const formParams = new URLSearchParams()
+
+        formData.forEach((value, key) => {
+            formParams.append(key, value as string);
+        });
+      
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formParams.toString(),
+        })
+          .then(() => setIsSubmitted(true))
+          .catch((error) => alert(error));
     };
 
     return (
@@ -36,15 +50,15 @@ export default function Contact() {
                             <Radio value="other" >Other</Radio>
 
                         </RadioGroup>
-                        <Input isRequired type="text" label="Name" />
-                        <Input isRequired type="email" label="Email" />
+                        <Input isRequired type="text" name="name" label="Name" />
+                        <Input isRequired type="email" name="email" label="Email" />
                         <Input
                             label="Phone Number (Optional)"
                             type="telephone"
                             name="telephone"
                         />
 
-                        <Input isRequired type="textarea" label="Message" />
+                        <Input isRequired type="textarea" label="Message" name="message" />
                         
 
                         <Button
