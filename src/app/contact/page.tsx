@@ -1,5 +1,5 @@
 "use client"
-import { Card, CardBody, CardHeader, Input, Button, Link, Radio, RadioGroup } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Input, Button, Radio, RadioGroup} from "@nextui-org/react";
 import React, {useState} from "react";
 
 export default function Contact() {
@@ -12,6 +12,8 @@ export default function Contact() {
         event.preventDefault();
         
         const formData = new FormData(event.target as HTMLFormElement);
+
+        console.log(formData);
 
         fetch('/', {
           method: 'POST',
@@ -44,8 +46,9 @@ export default function Contact() {
                             color="primary"
                             className="py-2"
                             isRequired
+                            name="requestType"
                         >
-                            <Radio type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
+                            <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
                             <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
                             <Radio type="radio" name="requestType" value="other" id="other" >Other</Radio>
                         </RadioGroup>
