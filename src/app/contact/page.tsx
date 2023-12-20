@@ -8,6 +8,15 @@ export default function Contact() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+        
+        const formData = new FormData(event.target as HTMLFormElement);
+
+        fetch('/', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => setIsSubmitted(true))
+        .catch(error => console.error('Form submission error:', error));
 
         setIsSubmitted(true)
     };
