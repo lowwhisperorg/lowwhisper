@@ -48,7 +48,7 @@ export default function About() {
           </p>
           
           <p className="font-serif">
-          If you feel led or have a prayer request, click on the <Link href="/contact">contact</Link> page so we can get in touch.
+          If you need prayer or a website, click on the <Link href="/contact">contact</Link> page so we can get in touch.
           </p>
         </CardBody>
 

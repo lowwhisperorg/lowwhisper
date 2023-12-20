@@ -7,7 +7,7 @@ export default function Contact() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isError, setIsError] = useState(false);
     const [Error, setError] = useState("");
-    const [requestType, setRequestType] = useState("service");
+    const [requestType, setRequestType] = useState("website");
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -32,10 +32,10 @@ export default function Contact() {
         <div className="flex flex-col justify-center items-center p-6">
             <Card className="max-w-screen-xs max-h-screen-xs text-foreground bg-background p-6">
                 <CardHeader>
-                    <h1><b>Contact</b></h1>
+                    <h1 ><b>Contact</b></h1>
                 </CardHeader>
-                <CardBody className="">
-                    <p>Use the form below to contact me for services or prayer requests!
+                <CardBody >
+                    <p className="font-serif">Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
                     { !isError && !isSubmitted ?  
@@ -51,7 +51,7 @@ export default function Contact() {
                             value={requestType}
                             onValueChange={(value) => setRequestType(value)}
                         >
-                            <Radio type="radio" name="requestType" value="service" id="service" >Service</Radio>
+                            <Radio type="radio" name="requestType" value="website" id="website" >Website</Radio>
                             <Radio  type="radio" name="requestType" value="prayer" id="prayer" >Prayer</Radio>
                             <Radio type="radio" name="requestType" value="other" id="other" >Other</Radio>
                         </RadioGroup>
