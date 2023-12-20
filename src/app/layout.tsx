@@ -34,6 +34,17 @@ export default function RootLayout({
         </div>
 
       </body>
+
+      <form hidden netlify-data="true" name="contact" method="POST" >
+      <input type="radio" id="prayer" name="prayer" value="prayer" />
+      <input type="radio" id="service" name="service" value="service" />
+      <input type="radio" id="other" name="other" value="other" />
+      <input type="text" id="name" name="name" />
+      <input type="email" id="email" name="email" />
+      <input type="telephone" id="telephone" name="telephone" />
+      <textarea id="message" name="message"></textarea>
+      </form>
+
     </html>
   )
 }

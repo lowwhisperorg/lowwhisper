@@ -44,9 +44,9 @@ export default function Contact() {
                             className="py-2"
                             isRequired
                         >
-                            <Radio value="prayer" id="prayer" >Prayer</Radio>
-                            <Radio value="service" id="service" >Service</Radio>
-                            <Radio value="other" id="other" >Other</Radio>
+                            <Radio type="radio" value="prayer" id="prayer" >Prayer</Radio>
+                            <Radio type="radio" value="service" id="service" >Service</Radio>
+                            <Radio type="radio" value="other" id="other" >Other</Radio>
 
                         </RadioGroup>
                         <Input isRequired type="text" name="name" label="Name" id="name"/>
