@@ -34,8 +34,8 @@ export default function Contact() {
                 <CardHeader>
                     <h1 ><b>Contact</b></h1>
                 </CardHeader>
-                <CardBody >
-                    <p className="font-serif">Use the form below to contact me for services or prayer requests!
+                <CardBody className="font-serif">
+                    <p >Use the form below to contact me for services or prayer requests!
                         {/* If you would like to donate,please use the <Link href="/donate">donate</Link> page. */}
                     </p>
                     { !isError && !isSubmitted ?  
