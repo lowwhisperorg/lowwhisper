@@ -14,8 +14,6 @@ export default function Contact() {
         
         const formData = new FormData(event.target as HTMLFormElement);
 
-        console.log(formData);
-
         fetch('/', {
           method: 'POST',
           body: formData,
